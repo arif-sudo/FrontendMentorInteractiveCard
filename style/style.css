@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans&family=Merriweather:ital@1&family=Philosopher&display=swap");
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Philosopher";
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+.container .left_section {
+  min-height: 100vh;
+  width: 40%;
+  background-image: url("../images/bg-main-desktop.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.container .left_section .cards {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+.container .left_section .cards .front_card {
+  position: relative;
+  transform: translateX(-100px) !important;
+}
+.container .left_section .cards .front_card .card_container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+}
+.container .left_section .cards .front_card .card_container h1 {
+  position: absolute;
+  color: #fff;
+  top: 110px;
+  letter-spacing: 2px;
+}
+.container .left_section .cards .front_card .card_container .card_info {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  left: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+.container .left_section .cards .back_card {
+  position: relative;
+}
+.container .left_section .cards .back_card #cvc {
+  position: absolute;
+  color: #fff;
+  top: 45%;
+  right: 15%;
+}
+.container .right_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.container .right_section form {
+  display: grid;
+  gap: 1rem;
+  width: 350px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.container .right_section form label {
+  color: #440061;
+  text-transform: uppercase;
+}
+.container .right_section form input {
+  padding: 8px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.container .right_section form input:focus {
+  outline-color: hsl(279deg, 29%, 34%);
+}
+.container .right_section form input::-webkit-outer-spin-button, .container .right_section form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.container .right_section form .grid_1 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 span;
+}
+.container .right_section form .grid_2 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 span;
+}
+.container .right_section form .card_information {
+  display: flex;
+  grid-column: 2 span;
+  gap: 1rem;
+}
+.container .right_section form .card_information #card_date {
+  display: flex;
+  flex-direction: column;
+}
+.container .right_section form .card_information #card_date .two_inp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .right_section form .card_information #card_date .two_inp input {
+  max-width: 70px;
+  margin-inline: 8px;
+  margin-left: 0;
+}
+.container .right_section form .card_information .grid_4 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 span;
+}
+.container .right_section form .card_information .grid_4 input {
+  width: 100%;
+}
+.container .right_section form button {
+  grid-column: 2 span;
+  grid-row: 2 span;
+  font-size: 18px;
+  height: 50px;
+  color: #fff;
+  border-radius: 6px;
+  background-color: #440061;
+  cursor: pointer;
+}
+.container .right_section .thank {
+  text-align: center;
+}
+.container .right_section .thank h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+.container .right_section .thank p {
+  font-size: 18px;
+  color: darkgray;
+  margin: 10px 0;
+}
+.container .right_section .thank button {
+  color: #fff;
+  width: 100%;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 18px;
+  background-color: #440061;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .front_card img, .back_card img, .back_card, .front_card {
+    width: 300px;
+  }
+  #card_logo {
+    width: 50px;
+  }
+  #number {
+    font-size: 1.1rem;
+    top: 80px;
+  }
+  #cvc {
+    font-size: 12px;
+    transform: translateY(-2px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .left_section {
+    width: 100% !important;
+    min-height: 50vh !important;
+    background-image: url("../images/bg-main-mobile.png");
+  }
+  .left_section .cards {
+    flex-direction: column-reverse !important;
+    left: 60% !important;
+    top: 40% !important;
+    gap: 0 !important;
+  }
+  .left_section .cards .front_card {
+    z-index: 100;
+  }
+  .left_section .cards .back_card {
+    transform: translateY(70px);
+  }
+  .right_section {
+    min-height: 50vh !important;
+    margin-top: 80px !important;
+  }
+}
+.hidden {
+  display: none !important;
+}/*# sourceMappingURL=style.css.map */
